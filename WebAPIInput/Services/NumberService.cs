@@ -42,9 +42,7 @@ namespace WebAPIInput.Services
 
         public string SumNum(string[] numberList)
         {
-            var list = GetAll();
             double result = 0;
-            int index = 0;
 
             if (numberList.Length == 0)
             {
@@ -53,14 +51,7 @@ namespace WebAPIInput.Services
 
             foreach(string id in numberList)
             {
-                foreach (InputNumber num in list.Result)
-                {
-                    if (num.ID == Convert.ToInt32(id))
-                    {
-                        result += Convert.ToDouble(num.Num);
-                        index++;
-                    }
-                }
+                result += Convert.ToDouble(GetById(Convert.ToInt32(id)).Result.Num);
             }
 
             return Convert.ToString(result);
