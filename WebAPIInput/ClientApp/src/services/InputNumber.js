@@ -16,3 +16,9 @@ export const getSum = async (listOfNumbers) => {
         .then(response => response.data)
         .catch(error => console.log(error));
 }
+
+export const getAll = async () => {
+    return await axios.get("https://localhost:44397/api/get")
+        .then(response => response.data)
+        .catch(error => console.log(error));
+}

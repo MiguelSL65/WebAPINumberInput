@@ -17,6 +17,29 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
+.h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1px;
+}
+
+#features {
+  margin-top: 10px;
+}
+
+#home {
+  margin-top: 40px;
+  padding-left: 50px;
+  font-size: 17px;
+}
+
+#built-in {
+  margin-top: 60px;
+}
+
 footer {    
     text-align: center;
     height: 35px;

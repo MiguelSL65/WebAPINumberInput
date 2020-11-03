@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using WebAPIInput.Dto;
 using WebAPIInput.Models;
 using WebAPIInput.Services;
@@ -41,6 +42,14 @@ namespace WebAPIInput.Controllers
         public string GetSum([FromBody] ListOfIndexDto listOfIndexNumbers)
         {
             return this.numberService.SumNum(listOfIndexNumbers.Indexes);
+        }
+
+        // GET: api/get
+        [Route("~/api/get")]
+        [HttpGet]
+        public IEnumerable<InputNumber> GetAllNumbers()
+        {
+            return this.numberService.GetAll().Result;
         }
 
     }

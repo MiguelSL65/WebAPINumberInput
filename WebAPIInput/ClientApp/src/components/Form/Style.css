@@ -1,0 +1,51 @@
+#number-form {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.h3 {
+    font-size: 50px;
+}
+
+#instructions {
+    text-align: center;
+    margin: 50px;
+}
+
+input[type=text], select {
+    margin: 8px;
+    width: 80%;
+}
+
+#list-of-in {
+    font-size: 20px;
+}
+
+#form {
+    text-align: center;
+    position: relative;   
+}
+
+#submit {
+    background-color: aliceblue;
+    padding: 20px 200px 20px 100px;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px;
+    border: none;
+}
+
+#submit:hover{
+    background-color: rgb(65, 165, 60);
+}
+
+#resultDiv {
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+}

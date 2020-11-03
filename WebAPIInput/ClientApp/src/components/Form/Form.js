@@ -9,7 +9,7 @@ export const Form = () => {
         setNumberInput(event.target.value);
     }
 
-    function validateInputs() {
+    function isValidInput() {
         
         let input = document.getElementById("number").value;
         let regexPatternToValidate = /^-?\d+\.?\d*$/;
@@ -23,25 +23,25 @@ export const Form = () => {
         return true;
     }
 
-    const handleFormSubmit = event => {
+    const handleFormSubmit = async event => {
         event.preventDefault();
 
         const data = {
             num: numberInput
         }
 
-        if (validateInputs()) {
-            addNumber(data);
+        if (isValidInput()) {
+            await addNumber(data);
         }
     }
 
     return(
         <div>
             <div id='number-form'>
-                <h3>Add a new number to the Database.</h3>
+                <h3 className='h3'>Add a new number to the Database.</h3>
             </div>
             <div id='instructions'>
-                <p><b>Instructions:</b> you should enter a single numeric value and <b>click submit</b>. Example: 12</p>
+                <p><b>Instructions:</b> you should enter a single numeric value (integer or decimal) and <b>click submit</b>. Example: 12.156</p>
             </div>
             <div>
                 <form id='form' onSubmit={handleFormSubmit}>
