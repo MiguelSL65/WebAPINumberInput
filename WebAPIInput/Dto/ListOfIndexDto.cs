@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebAPIInput.Dto
 {
+    /**
+     * The List of indexes Data Transfer Object
+     */
     public class ListOfIndexDto
     {
         public string[] Indexes { get; set; }

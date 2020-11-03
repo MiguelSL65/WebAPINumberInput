@@ -5,6 +5,9 @@ namespace WebAPIInput.Persistence
 {
     public class InputNumberContext : DbContext
     {
+        /**
+         * Configures a DbContext to connect a Database
+         */
         public InputNumberContext(DbContextOptions<InputNumberContext> options)
             : base(options)
         {

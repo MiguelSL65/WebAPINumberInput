@@ -8,7 +8,9 @@ namespace WebAPIInput.Persistence
 {
     public class DbInitializer
     {
-        
+        /**
+         *  Ensures that Database has been initialized
+         */
         public static void Initialize(InputNumberContext context, INumberService numberService)
         {
             context.Database.EnsureCreated();

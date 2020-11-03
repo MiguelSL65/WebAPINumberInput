@@ -9,6 +9,9 @@ using WebAPIInput.Persistence;
 
 namespace WebAPIInput.Services
 {
+    /**
+     * An INumberService implementation
+     */
     public class NumberService : INumberService
     {
         private InputNumberContext context;
@@ -18,6 +21,9 @@ namespace WebAPIInput.Services
             this.context = context;
         }
 
+        /**
+         * @see INumberService#Create(InputNumber) 
+         */
         public async Task<string> Create(InputNumber number)
         {
             this.context.Numbers.Add(number);
@@ -26,6 +32,9 @@ namespace WebAPIInput.Services
             return number.ID.ToString();
         }
 
+        /**
+         * @see INumberService#GetAll()
+         */
         public async Task<IEnumerable<InputNumber>> GetAll()
         {
             return await this.context.Numbers
@@ -33,6 +42,9 @@ namespace WebAPIInput.Services
                 .ToListAsync();
         }
 
+        /**
+         * @see INumberService#GetById(int)
+         */
         public async Task<InputNumber> GetById(int id)
         {
             return await this.context.Numbers
@@ -40,6 +52,9 @@ namespace WebAPIInput.Services
                 .FirstOrDefaultAsync(n => n.ID == id);
         }
 
+        /**
+         * @see INumberService#SumNum(string[])
+         */
         public string SumNum(string[] numberList)
         {
             double result = 0;

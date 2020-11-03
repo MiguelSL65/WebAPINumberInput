@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebAPIInput.Services
 {
+    /**
+     * Common interface for Number Data access
+     * */
     public interface IInputNumberService<T>
     {
         Task<IEnumerable<T>> GetAll();

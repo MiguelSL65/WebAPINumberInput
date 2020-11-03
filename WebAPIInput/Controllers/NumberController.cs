@@ -7,6 +7,9 @@ using WebAPIInput.Services;
 
 namespace WebAPIInput.Controllers
 {
+    /**
+     * REST Controller responsible for InputNumber related CRUD operations
+     */
     [Route("api/[controller]")]
     [ApiController]
     public class NumberController : ControllerBase
@@ -18,6 +21,12 @@ namespace WebAPIInput.Controllers
             this.numberService = numberService;
         }
 
+        /**
+         * Retrieves a representation of the InputNumber
+         * 
+         * @param id    the InputNumber id
+         * @return the InputNumber
+         */
         // GET: api/number/1
         [Route("~/api/number/{id}")]
         [HttpGet("{id}")]
@@ -26,6 +35,12 @@ namespace WebAPIInput.Controllers
             return numberService.GetById(id).Result;
         }
 
+        /**
+         * Add an InputNumber
+         * 
+         * @param number    the number to add
+         * @return the number added
+         */
         // POST: api/number
         [Route("~/api/number")]
         [HttpPost]
@@ -36,6 +51,12 @@ namespace WebAPIInput.Controllers
             return GetByNumberId(Convert.ToInt32(id));
         }
 
+        /**
+         * Retrieves the sum of 2 or more numbers
+         * 
+         * @param listOfIndexNumbers    the list DTO with database indexes that represent the numbers in database
+         * @return the sum value
+         */
         // GET: api/sum
         [Route("~/api/sum")]
         [HttpPost]
@@ -44,6 +65,11 @@ namespace WebAPIInput.Controllers
             return this.numberService.SumNum(listOfIndexNumbers.Indexes);
         }
 
+        /**
+         * Retrieves a representation of the given InputNumbers
+         * 
+         * @return the list of InputNumbers (numbers in the database)
+         */
         // GET: api/get
         [Route("~/api/get")]
         [HttpGet]
