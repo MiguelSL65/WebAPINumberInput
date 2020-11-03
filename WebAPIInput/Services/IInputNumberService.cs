@@ -14,6 +14,6 @@ namespace WebAPIInput.Services
 
         Task<T> GetById(int id);
 
-        Task<string> Create(T model);
+        Task<T> Create(T model);
     }
 }

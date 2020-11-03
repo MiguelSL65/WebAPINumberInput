@@ -24,12 +24,12 @@ namespace WebAPIInput.Services
         /**
          * @see INumberService#Create(InputNumber) 
          */
-        public async Task<string> Create(InputNumber number)
+        public async Task<InputNumber> Create(InputNumber number)
         {
-            this.context.Numbers.Add(number);
+            var num = this.context.Numbers.Add(number).Entity;
             await this.context.SaveChangesAsync();
 
-            return number.ID.ToString();
+            return num;
         }
 
         /**

@@ -22,20 +22,6 @@ namespace WebAPIInput.Controllers
         }
 
         /**
-         * Retrieves a representation of the InputNumber
-         * 
-         * @param id    the InputNumber id
-         * @return the InputNumber
-         */
-        // GET: api/number/1
-        [Route("~/api/number/{id}")]
-        [HttpGet("{id}")]
-        public InputNumber GetByNumberId(int id)
-        {
-            return numberService.GetById(id).Result;
-        }
-
-        /**
          * Add an InputNumber
          * 
          * @param number    the number to add
@@ -46,9 +32,7 @@ namespace WebAPIInput.Controllers
         [HttpPost]
         public InputNumber AddNumberToDb(InputNumber number)
         {
-            var id = this.numberService.Create(number).Result;
-
-            return GetByNumberId(Convert.ToInt32(id));
+            return this.numberService.Create(number).Result;
         }
 
         /**
